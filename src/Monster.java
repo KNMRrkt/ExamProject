@@ -1,22 +1,32 @@
 public abstract class Monster implements Creature{
     private String name;
-    public String getName(){
+    private int hp;
+    private char suffix;
+
+    /*public String getName(){
         return this.name;
     }
 
-    private int hp;
-    public int getHp(){
+     */
+    /*public int getHp(){
         return this.hp;
     }
-    public void setHp(){
+    public void setHp(int set){
         try{
-            hp
+            this.hp += set;
+        } catch (IllegalArgumentException e) {
+            System.err.println("初期設定に誤りがあるため、キャラクターを作成できませんでした。");
+        }
+    }*/
+
+    public Monster(char suffix, int hp){
+        suffix = this.suffix;
+        try{
+            hp = this.hp;
         } catch (IllegalArgumentException e) {
             System.err.println("初期設定に誤りがあるため、キャラクターを作成できませんでした。");
         }
     }
-
-    char suffix;
 
     public final boolean isAlive(){
         if(getHp()>0){
