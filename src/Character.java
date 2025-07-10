@@ -10,7 +10,7 @@ public abstract class Character implements Creature{
     }
     public void setHp(){
         try{
-            this.hp
+            hp
         } catch (IllegalArgumentException e) {
             System.err.println("初期設定に誤りがあるため、キャラクターを作成できませんでした。");
         }
