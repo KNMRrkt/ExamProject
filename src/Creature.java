@@ -4,5 +4,5 @@ public interface Creature {
     public abstract void attack(Creature target);
     public abstract String getName();
     public abstract int getHp();
-    public abstract void setHp(int set);
+    public abstract void setHp(int hp);
 }
