@@ -15,13 +15,17 @@ public abstract class Character implements Creature{
     }
 
     public void setHp(int hp) {
+        if(hp>=0){
             this.hp = hp;
+        }else{
+            this.hp = 0;
+        }
     }
 
     public Character(String name, int hp){
-        name = this.name;
+        this.setName(name);
         try{
-            hp = this.hp;
+            this.setHp(hp);
         } catch (IllegalArgumentException e) {
             System.err.println("初期設定に誤りがあるため、キャラクターを作成できませんでした。");
         }
@@ -36,6 +40,6 @@ public abstract class Character implements Creature{
     }
 
     public void showStatus(){
-        System.out.println(this.name + "：HP " + this.hp);
+        System.out.println(this.getName() + "：HP " + this.getHp());
     }
 }

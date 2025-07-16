@@ -16,7 +16,11 @@ public abstract class Monster implements Creature{
     }
 
     public void setHp(int hp) {
+        if(hp>=0){
             this.hp = hp;
+        }else{
+            this.hp = 0;
+        }
     }
 
     public char getSuffix() {
@@ -28,10 +32,10 @@ public abstract class Monster implements Creature{
     }
 
     public Monster(String name, char suffix, int hp){
-        name = this.name;
-        suffix = this.suffix;
+        this.setName(name);
+        this.setSuffix(suffix);
         try{
-            hp = this.hp;
+            this.setHp(hp);
         } catch (IllegalArgumentException e) {
             System.err.println("初期設定に誤りがあるため、キャラクターを作成できませんでした。");
         }
@@ -43,5 +47,9 @@ public abstract class Monster implements Creature{
         }else{
             return false;
         }
+    }
+
+    public void showStatus(){
+        System.out.println(this.name + "：HP " + this.hp);
     }
 }
