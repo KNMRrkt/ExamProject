@@ -41,18 +41,6 @@ public class GameMaster {
             }
         }
 
-
-        /*h.attack(m);
-        h.attack(g);
-        h.attack(s);
-        w.attack(m);
-        w.attack(g);
-        w.attack(s);
-        t.attack(m);
-        t.attack(g);
-        t.attack(s);*/
-
-
         System.out.println("\n敵の総攻撃！");
         for(int i = 0; i < monsters.size(); i++){
             for(int j = 0; j < party.size(); j++){
@@ -60,19 +48,15 @@ public class GameMaster {
             }
         }
 
-        /*m.attack(h);
-        m.attack(w);
-        m.attack(t);
-        g.attack(h);
-        g.attack(w);
-        g.attack(t);
-        s.attack(h);
-        s.attack(w);
-        s.attack(t);*/
-
-
-        System.out.println("ダメージを受けた勇者が突然光だした！");
+        System.out.println("\nダメージを受けた勇者が突然光だした！");
         System.out.println("勇者はスーパーヒーローに進化した！");
+        SuperHero sh = new SuperHero(h);
+        party.set(0,sh);
+        for(int i = 0; i < monsters.size(); i++){
+            sh.attack(monsters.get(i));
+        }
+
+
 
     }
 }

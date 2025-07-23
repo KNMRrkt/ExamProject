@@ -1,6 +1,6 @@
 public class SuperHero extends Hero{
-    public SuperHero(String name, int hp, String weapon){
-        super(name, hp, weapon);
+    public SuperHero(Hero h){
+        super(h.getName(), h.getHp(), h.getWeapon());
     }
 
     public void attack(Creature target) {
