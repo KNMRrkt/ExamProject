@@ -58,5 +58,25 @@ public class GameMaster {
 
 
 
+
+        System.out.println("\n---味方パーティ最終ステータス---");
+        for(int i = 0; i < party.size(); i++){
+            party.get(i).showStatus();
+            if(party.get(i).isAlive()){
+                System.out.println("生存状況：生存");
+            }else{
+                System.out.println("生存状況：戦闘不能");
+            }
+        }
+
+        System.out.println("\n---敵グループ最終ステータス---");
+        for(int i = 0; i < monsters.size(); i++){
+            monsters.get(i).showStatus();
+            if(monsters.get(i).isAlive()){
+                System.out.println("生存状況：生存");
+            }else{
+                System.out.println("生存状況：討伐済み");
+            }
+        }
     }
 }
