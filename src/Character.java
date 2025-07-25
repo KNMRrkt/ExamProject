@@ -23,12 +23,11 @@ public abstract class Character implements Creature{
     }
 
     public Character(String name, int hp){
-        this.setName(name);
-        try{
-            this.setHp(hp);
-        } catch (IllegalArgumentException e) {
-            System.err.println("初期設定に誤りがあるため、キャラクターを作成できませんでした。");
+        if(hp < 0){
+            throw new IllegalArgumentException("初期設定に誤りがあるため、キャラクターを作成できませんでした");
         }
+        this.setName(name);
+        this.setHp(hp);
     }
 
     public final boolean isAlive(){
